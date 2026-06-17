@@ -1,0 +1,30 @@
+dpkg -l | grep jenkins
+sudo apt remove jenkins
+rm ~/jenkins.war
+rm -rf ~/jenkins
+
+//Install
+wget https://get.jenkins.io/war-stable/latest/jenkins.war
+
+//open
+java -jar jenkins.wawr
+
+steps:
+1. New Item
+2. Give name and select pipeline => next
+3. paste github repo link
+4.pipeline: 
+           pipeline {
+             agent any
+
+             stages {
+               stage('Check') {
+                  steps {
+                    echo "Pipeline is running"
+                  }
+               }
+             }
+           }
+
+5. Save
+6. Build Now
