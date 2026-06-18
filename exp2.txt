@@ -1,0 +1,22 @@
+mvn --version
+
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=MyMavenApp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+gedit pom.xml
+//BELOW URL
+
+<properties>
+<maven.compiler.source>1.8</maven.compiler.source>
+<maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+
+mvn clean package
+
+mvn exec:java -Dexec.mainClass=com.example.App
+
+mvn test
+
+mvn clean
