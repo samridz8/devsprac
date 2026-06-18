@@ -1,0 +1,51 @@
+mvn --version
+gradle --version
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=fals
+
+cd my-app
+
+gedit pom.xml
+<properties>
+  <maven.compiler.source>11</maven.compiler.source>
+  <maven.compiler.target>11</maven.compiler.target>
+</properties>
+
+<build>
+  <plugins>
+  <plugin>
+  <artifactId>maven-jar-plugin</artifactId>
+  <version>3.2.0</version>
+  <configuration>
+  <archive>
+  <manifest>
+  <mainClass>com.example.App</mainClass>
+  </manifest>
+  </archive>
+  </configuration>
+  </plugin>
+  </plugins>
+</build>
+
+
+mvn clean package
+java -jar target/my-app-1.0-SNAPSHOT.jar
+
+
+cd
+mkdir hellomavengradle
+cd hellomavengradle
+
+gradle init --type java-application
+
+
+gedit build.gradle
+com.example.App
+
+
+mkdir -p src/main/java/com/example
+cp ../my-app/src/main/java/com/example/App.java src/main/java/com/example
+
+
+gradle build
+gradle run
