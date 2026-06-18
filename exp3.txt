@@ -1,0 +1,18 @@
+gradle --version
+
+mkdir hellogradle
+cd hellogradle
+
+gradle init --type java-application
+
+gedit build.gradle
+=>task hello{
+  doLast{
+  println "wassup"
+  }
+  }
+
+gradle hello
+
+gradle build
+gradle run
