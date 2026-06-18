@@ -1,13 +1,13 @@
 dpkg -l | grep jenkins
 sudo apt remove jenkins
 rm ~/jenkins.war
-rm -rf ~/jenkins
+rm -rf ~/.jenkins
 
 //Install
 wget https://get.jenkins.io/war-stable/latest/jenkins.war
 
 //open
-java -jar jenkins.wawr
+java -jar jenkins.war
 
 steps:
 1. New Item
